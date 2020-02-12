@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class Estoque {
     private int id;
-    private Filial filial;
-    private long quantidade;
-    private String descProduto;
+    private int filial;
+    private int quantEstoque;
+    private int idProduto;
 }
