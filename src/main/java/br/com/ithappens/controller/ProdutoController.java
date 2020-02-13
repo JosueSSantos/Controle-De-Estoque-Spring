@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/produtos")
 public class ProdutoController {
     @Autowired
-    private IProdutoService produtoService;
+    private IProdutoService iProdutoService;
         @PostMapping
         public ResponseEntity salvarProduto(@RequestBody Produto produto) {
-
-            return ResponseEntity.ok(produtoService.salvarProduto(produto));
+            iProdutoService.salvarProduto(produto);
+            return ResponseEntity.ok(produto.getId());
 
     }
 
