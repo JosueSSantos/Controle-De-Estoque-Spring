@@ -2,7 +2,6 @@ package br.com.ithappens.controller;
 
 import br.com.ithappens.model.Produto;
 import br.com.ithappens.service.IProdutoService;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,7 +18,6 @@ public class ProdutoController {
         public ResponseEntity salvarProduto(@RequestBody Produto produto) {
             iProdutoService.salvarProduto(produto);
             return ResponseEntity.ok(produto.getId());
-
-    }
+        }
 
 }

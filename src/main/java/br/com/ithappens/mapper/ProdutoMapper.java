@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface ProdutoMapper {
 
      Boolean salvarProduto(@Param("produto") Produto produto);
+
 }

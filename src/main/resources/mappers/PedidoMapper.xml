@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="br.com.ithappens.mapper.PedidoMapper">
-    <insert id="pedidoEstoque" parameterType="br.com.ithappens.model.Estoque">
-
-    </insert>
+    <select id="existe" parameterType="br.com.ithappens.model.Estoque" resultType="java.lang.Boolean">
+       select * from Produto where (#{pedido.IdProduto},#{pedido.Filial});
+    </select>
+    <update id="atualiza" parameterType="br.com.ithappens.model.Estoque">
+        update Estoque set(#{atualiza.quantEstoque});
+     </update>
+    <insert id="inserir" parameterType="br.com.ithappens.model.Estoque">
+          insert into treinamento.Estoque(IdProduto,quantEstoque,Filial) values
+        (#{inserir.quantEstoque},#{inserir.idProduto},#{inserir.filial});
+     </insert>
 </mapper>

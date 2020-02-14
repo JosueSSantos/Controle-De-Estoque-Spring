@@ -1,7 +1,6 @@
 package br.com.ithappens.controller;
 
 import br.com.ithappens.model.Estoque;
-import br.com.ithappens.model.Produto;
 import br.com.ithappens.service.IEstoqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ public class EstoqueController {
     private IEstoqueService estoqueService;
         @PostMapping
         public ResponseEntity ItemPedidoEstoque(@RequestBody Estoque estoque){
-             Estoque pedidoestoque;
+
              return null;
         }
 }

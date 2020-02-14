@@ -2,20 +2,19 @@ package br.com.ithappens.service;
 
 import br.com.ithappens.mapper.PedidoMapper;
 import br.com.ithappens.model.PedidoEstoque;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PedidoService implements IPedidoService{
-    private final PedidoMapper pedidoMapper;
+    @Autowired
+    private PedidoMapper mapper;
 
-    public PedidoService(PedidoMapper pedidoMapper){
-        this.pedidoMapper = pedidoMapper;
-    }
     public Boolean pedidoEstoque(PedidoEstoque pedidoEstoque) {
-//        return pedidoMapper.pedidoEstoque(pedidoEstoque);
-//        long idProduto;
-//        idProduto = pedidoEstoque.getClass(pedidoMapper);
-
-        return null;
+        if (mapper.existe(pedidoEstoque)) {
+            return mapper.atualiza(pedidoEstoque);
+        } else {
+            return mapper.inserir(pedidoEstoque);
+        }
     }
 }
